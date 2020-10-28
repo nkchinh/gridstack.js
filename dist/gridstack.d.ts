@@ -75,6 +75,20 @@ export declare class GridStack {
     opts: GridStackOptions;
     /** current drag&drop plugin being used */
     dd: GridStackDD;
+    /** @internal */
+    private placeholder;
+    /** @internal */
+    private _oneColumnMode;
+    /** @internal */
+    private _prevColumn;
+    /** @internal */
+    private _gsEventHandler;
+    /** @internal */
+    private _styles;
+    /** @internal flag to keep cells square during resize */
+    private _isAutoCellHeight;
+    /** @internal track event binding to window resize so we can remove */
+    private _windowResizeBind;
     /**
      * Construct a grid item from the given element and options
      * @param el
@@ -365,8 +379,40 @@ export declare class GridStack {
      * }
      */
     willItFit(x: number, y: number, width: number, height: number, autoPosition: boolean): boolean;
+    /** @internal */
+    private _triggerChangeEvent;
+    /** @internal */
+    private _triggerAddEvent;
+    /** @internal */
+    private _triggerRemoveEvent;
+    /** @internal */
+    private _triggerEvent;
+    /** @internal called to delete the current dynamic style sheet used for our layout */
+    private _removeStylesheet;
+    /** @internal updated/create the CSS styles for row based layout and initial margin setting */
+    private _updateStyles;
+    /** @internal */
+    private _updateContainerHeight;
+    /** @internal */
+    private _setupRemovingTimeout;
+    /** @internal */
+    private _clearRemovingTimeout;
+    /** @internal prepares the element for drag&drop **/
+    private _prepareDragDropByNode;
     /** called to resize children nested grids when we/item resizes */
     private _resizeNestedGrids;
+    /** @internal */
+    private _prepareElement;
+    /** @internal call to write x,y,w,h attributes back to element */
+    private _writeAttrs;
+    /** @internal call to write any default attributes back to element */
+    private _writeAttr;
+    /** @internal call to read any default attributes from element */
+    private _readAttr;
+    /** @internal */
+    private _updateElement;
+    /** @internal */
+    private _setStaticClass;
     /**
      * called when we are being resized by the window - check if the one Column Mode needs to be turned on/off
      * and remember the prev columns we used, as well as check for auto cell height (square)
@@ -374,4 +420,28 @@ export declare class GridStack {
     onParentResize(): GridStack;
     /** add or remove the window size event handler */
     private _updateWindowResizeEvent;
+    /** @internal call to setup dragging in from the outside (say toolbar), with options */
+    private _setupDragIn;
+    /** @internal called to setup a trash drop zone if the user specifies it */
+    private _setupRemoveDrop;
+    /** @internal called to add drag over support to support widgets */
+    private _setupAcceptWidget;
+    /** @internal convert a potential selector into actual element */
+    private static getElement;
+    /** @internal convert a potential selector into actual list of elements */
+    private static getElements;
+    /** @internal */
+    private static getGridElement;
+    /** @internal */
+    private static getGridElements;
+    /** @internal initialize margin top/bottom/left/right and units */
+    private initMargin;
+    /** @internal called to update an element(s) attributes and node values */
+    private _updateAttr;
+    /** @internal */
+    private setGridWidth;
+    /** @internal */
+    private setColumn;
+    /** @internal */
+    private getGridHeight;
 }

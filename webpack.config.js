@@ -4,6 +4,9 @@ module.exports = {
   entry: {
     'gridstack.all': './src/gridstack.ts',
   },
+  externals: {
+    './jquery': 'jQuery'
+  },
   mode: 'production', // production vs development
   devtool: 'source-map',
   // devtool: 'use eval-source-map', // for best (large .js) debugging. see https://survivejs.com/webpack/building/source-maps/

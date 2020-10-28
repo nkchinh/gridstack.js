@@ -49,5 +49,13 @@ export declare class Utils {
     static clone(target: {}): {};
     /** return the closest parent matching the given class */
     static closestByClass(el: HTMLElement, name: string): HTMLElement;
+    /** @internal */
+    static throttle(callback: () => void, delay: number): (...args: any[]) => void;
     static removePositioningStyles(el: HTMLElement): void;
+    /** @internal */
+    static getScrollParent(el: HTMLElement): HTMLElement;
+    /** @internal */
+    static updateScrollPosition(el: HTMLElement, position: {
+        top: number;
+    }, distance: number): void;
 }

@@ -9,6 +9,8 @@ export declare type numberOrString = number | string;
 export interface GridItemHTMLElement extends HTMLElement {
     /** pointer to grid node instance */
     gridstackNode?: GridStackNode;
+    /** @internal */
+    _gridstackNodeOrig?: GridStackNode;
 }
 /**
  * Defines the options for a Grid
@@ -122,6 +124,10 @@ export interface GridStackOptions {
     staticGrid?: boolean;
     /** if `true` will add style element to `<head>` otherwise will add it to element's parent node (default `false`). */
     styleInHead?: boolean;
+    /** @internal */
+    _isNested?: boolean;
+    /** @internal */
+    _class?: string;
 }
 /**
  * GridStack Widget creation options
@@ -198,4 +204,48 @@ export interface GridStackNode extends GridStackWidget {
     el?: GridItemHTMLElement;
     /** pointer back to Grid instance */
     grid?: GridStack;
+    /** @internal */
+    _id?: number;
+    /** @internal */
+    _dirty?: boolean;
+    /** @internal */
+    _updating?: boolean;
+    /** @internal */
+    _added?: boolean;
+    /** @internal */
+    _temporary?: boolean;
+    /** @internal */
+    _isOutOfGrid?: boolean;
+    /** @internal */
+    _origX?: number;
+    /** @internal */
+    _origY?: number;
+    /** @internal */
+    _packY?: number;
+    /** @internal */
+    _origW?: number;
+    /** @internal */
+    _origH?: number;
+    /** @internal */
+    _lastTriedX?: number;
+    /** @internal */
+    _lastTriedY?: number;
+    /** @internal */
+    _lastTriedWidth?: number;
+    /** @internal */
+    _lastTriedHeight?: number;
+    /** @internal */
+    _isAboutToRemove?: boolean;
+    /** @internal */
+    _removeTimeout?: number;
+    /** @internal */
+    _beforeDragX?: number;
+    /** @internal */
+    _beforeDragY?: number;
+    /** @internal */
+    _prevYPix?: number;
+    /** @internal */
+    _temporaryRemoved?: boolean;
+    /** @internal */
+    _initDD?: boolean;
 }
