@@ -42,8 +42,7 @@
     "url": "https://github.com/gridstack/gridstack.js/issues"
   },
   "homepage": "http://gridstack.github.io/gridstack.js/",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jasmine": "^3.5.9",
     "@types/jquery": "^3.5.1",
